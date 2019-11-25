@@ -1,0 +1,93 @@
+#
+# from device/transsion/ka7_h8024/system.prop
+#
+#
+# system.prop for generic sdk
+#
+
+rild.libpath=mtk-ril.so
+rild.libargs=-d /dev/ttyC0
+
+
+# MTK, Infinity, 20090720 {
+wifi.interface=wlan0
+# MTK, Infinity, 20090720 }
+
+# MTK, mtk03034, 20101210 {
+ro.mediatek.wlan.wsc=1
+# MTK, mtk03034 20101210}
+# MTK, mtk03034, 20110318 {
+ro.mediatek.wlan.p2p=1
+# MTK, mtk03034 20110318}
+
+# MTK, mtk03034, 20101213 {
+mediatek.wlan.ctia=0
+# MTK, mtk03034 20101213}
+
+
+#
+wifi.tethering.interface=ap0
+#
+
+wifi.direct.interface=p2p0
+#dalvik.vm.heapgrowthlimit=128m
+#dalvik.vm.heapsize=256m
+
+# USB MTP WHQL
+ro.sys.usb.mtp.whql.enable=0
+
+# Power off opt in IPO
+sys.ipo.pwrdncap=2
+
+ro.sys.usb.storage.type=mtp
+
+# USB BICR function
+ro.sys.usb.bicr=no
+
+# USB Charge only function
+ro.sys.usb.charging.only=yes
+
+# audio
+ro.camera.sound.forced=0
+ro.audio.silent=0
+
+ro.zygote.preload.enable=0
+
+# temporary enables NAV bar (soft keys)
+qemu.hw.mainkeys=0
+#Infinix:add gujiacheng for XLLLHBLES-1057 start
+persist.sys.disable_rescue = true
+#Infinix:add gujiacheng for XLLLHBLES-1057 end
+ro.kernel.zio=38,108,105,16
+#ro.kernel.qemu=0
+#ro.kernel.qemu.gles=0
+ro.opengles.version=131072
+#ro.boot.selinux=disable
+
+# Disable dirty region for Mali
+debug.hwui.render_dirty_regions=false
+
+
+#add XLLLGOBLES-1 by xing.fang 20171130 start
+persist.midtest.ps.noise.min=0
+persist.midtest.ps.noise.max=1000
+#add XLLLGOBLES-1 by xing.fang 20171130 end
+#modify default music VOLUME zhangtao 20171024
+ro.config.media_vol_default = 13
+#Infinix:by gujiacheng for XLLLGOBLES-86 20171212 start
+ro.error.receiver.default=com.rlk.feedback
+#Infinix:by gujiacheng for XLLLGOBLES-86 20171212 end
+#Transsion fupengcheng modify for KAQHBLES-29 2018-02-02 begin
+transsion.device.name=TECNO SPARK 2
+#Transsion fupengcheng modify for KAQHBLES-29 2018-02-02 end
+#RD6:add by gaoxuebin for KAQHBLES-332 20180316 start
+ro.transsion.os.name=HIOS
+#RD6:add by gaoxuebin for KAQHBLES-332 20180316 end
+#modify  KAQHBLES-10 by weifeng.niu 20180125 start
+persist.sys.fp.enroll.times=13
+#modify  KAQHBLES-10 by weifeng.niu 20180125 end
+#add  by zhaoxin 20180413 start
+ro.logd.size=262144
+#add  by zhaoxin 20180413 end
+
+#

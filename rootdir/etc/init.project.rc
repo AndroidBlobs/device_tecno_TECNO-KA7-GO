@@ -1,0 +1,59 @@
+# MTK project .rc configure
+
+
+
+on post-fs-data
+
+
+
+
+
+
+
+
+
+
+#Camera
+    chmod 0660 /dev/MAINAF
+    chown system camera /dev/MAINAF
+
+    chmod 0660 /dev/MAINAF2
+    chown system camera /dev/MAINAF2
+
+    chmod 0660 /dev/SUBAF
+    chown system camera /dev/SUBAF
+
+    chmod 0660 /dev/GAF001AF
+    chown system camera /dev/GAF001AF
+
+    chmod 0660 /dev/DW9714AF
+    chown system camera /dev/DW9714AF
+
+    chmod 0660 /dev/AD5820AF
+    chown system camera /dev/AD5820AF
+
+	chmod 0660 /dev/BU64745GWZAF
+    chown system camera /dev/BU64745GWZAF
+
+#SMB
+    chown system system /proc/smb/ScreenComm
+    chmod 0660 /proc/smb/ScreenComm
+
+
+    #add KAQHBLES-2233 by haiping.bai 20180605 start
+#FINGERPRINT
+    chmod 0666 /dev/fpsdev0
+    #add KAQHBLES-2233 by haiping.bai 20180605 end
+
+
+    chmod 0660 /dev/spm
+    chown system system /dev/spm
+
+
+
+#[PPD]XLLLHBLES-27 add by shaojun.zou optimize extra_free_kbytes 17/12/11 start
+on property:sys.boot_completed=1 && property:ppd.memory_config.high_ram=true
+    write /proc/sys/vm/extra_free_kbytes 36450
+    write /sys/module/lowmemorykiller/parameters/minfree "9216,12288,15360,18432,51200,74240"
+    write /sys/module/lowmemorykiller/parameters/adj "0,100,200,300,900,906"
+#[PPD]XLLLHBLES-27 add by shaojun.zou optimize extra_free_kbytes 17/12/11 end
